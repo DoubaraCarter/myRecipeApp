@@ -1,148 +1,121 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Outfit', sans-serif;
+    }
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
-  body {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url('../image/paulina-Yi1fFc2tSc8-unsplash.jpg');
-    height: 100%;
-    /* backdrop-filter: brightness(30%); */
-    background-attachment: fixed;
-  }
-  .container {
-    background-color: #cecece;
-    font-size: 16px;
-    padding: 3em 2.8em;
-    border-radius: 30px;
-    width: 35%;
-    margin: 50px auto;
-  }
-  h2{
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    color: #fff;
-    padding-top: 30px;
-    text-decoration: underline;
-  }
-  .search {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 9fr 3fr;
-    gap: 1.2em;
-  }
-  .search input {
-    background-color: #cecece;
-    color: black;
-    font-size: 18px;
-    padding: 0.6em;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid #202030;
-    width: 100%;
-  }
-  .search button {
-    font-size: 1em;
-    background-color: black;
-    color: #fff;
-    border: none;
-    font-weight: 600;
-    border-radius: 0.3em;
-    cursor: pointer;
-  }
- img {
-    display: flex;
-    width: 300px;
-    margin: 5px auto 0 auto;
-    border-radius: 30px;
-    border: 3px solid black;
-  }
-  .desc{
-    color: rgb(194, 194, 194);
-  }
-  .result{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1.8em auto 0 auto;
-    border-radius: 30px;
-    /* border: 3px solid black; */
-    
-  }
-
-  ul {
-    margin: auto;
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 6rem;
-    padding: 1.2em 0 0 1.2em;
-    color: #303040;
-    text-transform: capitalize;
-    list-style-type: none;
-  }
-  li{
-      padding-left: 100px;
-      padding-right: 100px;
-  }
-  a{
-    text-decoration: none;
-    color: white;
-  }
-  p{
-      font-size: 20px;
-      font-weight: bold;
-      text-align: center;
-  }
-  h3 {
-    text-align: center;
-    margin-top: 1.8em;
-    color: #202030;
-  }
-  @media screen and (max-width: 768px) {
-    .container {
-      font-size: 14px;
-      width: 95%;
-      border-radius: 15px;
-    }
-    .search{
-      display: flex;
-      width: 100%;
-    }
-    .search button{
-      width: 100px;
-    }
-    /* .result{
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-image: url('../image/img3.jpeg');
-      height: 400vh; 
-      backdrop-filter: brightness(40%);
-      background-attachment: fixed;
-    } */
     body {
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-image: url('../image/paulina-Yi1fFc2tSc8-unsplash.jpg');
-      height: 100%;
-      /* backdrop-filter: brightness(40%); */
-      background-attachment: fixed;
-    }
-    ul{
+      background: linear-gradient(120deg, #1c1c1c, #282828);
+      color: #ffffff;
       display: flex;
       flex-direction: column;
-      padding: 0;
-      margin: 0;
+      align-items: center;
+      padding: 2rem;
     }
-    li{
-      padding: 0;
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
     }
-  }
+
+    .header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #facc15;
+    }
+
+    .header p {
+      color: #a1a1aa;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .search-box {
+      background: #18181b;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .search {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .search input {
+      flex: 1;
+      padding: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      background: #27272a;
+      color: white;
+    }
+
+    .search button {
+      background-color: #facc15;
+      border: none;
+      padding: 1rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      color: #1c1c1c;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .search button:hover {
+      background-color: #eab308;
+    }
+
+    #loader {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      display: none;
+    }
+
+    .result {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .meal-card {
+      background: #18181b;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .meal-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .meal-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .meal-card-content {
+      padding: 1rem;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .meal-card-content p {
+      font-size: 0.9rem;
+      color: #facc15;
+    }
+
+    @media (max-width: 768px) {
+      .search {
+        flex-direction: column;
+      }
+    }
